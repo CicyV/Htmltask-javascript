@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="stylehtml.css">
+    <script src="JavaScripthtml.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+</head>
+<body class="bo">
+    <div class="h">
+        <p> </p>
+    </div>
+    <header class="header">
+        <div style="text-align: left;">
+            <br />
+            <img src="pic2.jpeg" alt="Harmony Society Logo"><br />
+            <h2>Harmony</h2>
+            <h3 style="margin-left:20px;">Society</h3>
+        </div>
+        <div class="htxt">
+            <a href="tel:+12107888829" style="color: white;">
+                <i class="fas fa-phone-alt"></i> 210-788-8829
+            </a>
+
+            <h3>
+                <i class="fas fa-envelope"></i> harmonysociety@mail.com
+            </h3>
+
+            <h3>
+                <i class="fas fa-globe"></i>
+                <a href="http://www.harmonysociety.com" style="color: white;">www.harmonysociety.com</a>
+            </h3>
+        </div>
+
+    </header>
+    <h1 style="margin-left:20px;">Register for Membership</h1>
+    <form>
+        <div class="container">
+            <div class="item1">
+                <h2 style="background-color: #edb123; font-color: #34315c;">Personal Information</h2>
+            </div>
+            <div class="item1">
+                <label for="full-name">Full Name:</label>
+            </div>
+            <div class="item2">
+                <input type="text" id="full-name" name="full-name" oninput="Checkname()">
+            </div>
+
+            <div class="item1">
+                <label for="address">Address:</label>
+            </div>
+            <div class="item2">
+                <input type="text" id="address" name="address" oninput="CheckAddress()">
+            </div>
+            <div class="item1">
+                <label for="date">Date of Birth:</label>
+            </div>
+            <div class="item3">
+
+                <input type="date" id="date" name="date" onchange="validateDOB()">
+                <p id="message" style="color: red;"></p>
+
+            </div>
+            <div class="item32">
+                <label for="gender">Gender:</label>
+
+                <input type="radio" id="male" name="gender" value="Male" style="width: 20px; height: 20px;">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" style="width: 20px; height: 20px;">
+                <label for="female">Female</label>
+
+                <div id="gender-error" style="color: red; display: none; margin-top: 5px;"></div>
+
+            </div>
+            <div class="item1">
+                <label for="phone-number">Phone Number:</label>
+            </div>
+            <div class="item3">
+                <input type="text" id="phone-number" name="phone-number" oninput="CheckPhoneNumber()">
+            </div>
+
+            <div class="item11">
+                <label for="email">E-mail:</label>
+            </div>
+            <div class="item32">
+                <input type="email" id="email" name="email" oninput="CheckEmail()">
+            </div>
+        </div>
+        <div class="container">
+
+            <h2 style="background-color: #edb123; font-color: #34315c;">Membership Information</h2>
+            <div class="item1">
+                <input type="checkbox" id="individual-membership" name="membership" value="individual-membership" onfocusout="CheckMembershipValidation()" style="width: 30px; height: 30px;">
+                <label for="individual-membership">Individual Membership</label>
+            </div>
+            <div class="item2">
+                <input type="checkbox" id="Student Membership(Attach valid Student ID)" name="membership" value="Student Membership(Attach valid Student ID)" onfocusout="CheckMembershipValidation()" style="width: 30px; height: 30px;">
+                <label for="Student Membership(Attach valid Student ID)">Student Membership(Attach valid Student ID)</label>
+
+            </div>
+            <div class="item1">
+                <input type="checkbox" id="family-membership" name="membership" value="family-membership" onfocusout="CheckMembershipValidation()" style="width: 30px; height: 30px;">
+                <label for="family-membership">Family Membership</label>
+            </div>
+            <div class="item2">
+                <input type="checkbox" id="senior-citizen-membership" name="membership" value="senior-citizen-membership" onfocusout="CheckMembershipValidation()" style="width: 30px; height: 30px;">
+                <label for="senior-citizen-membership">Senior Citizen Membership</label>
+            </div>
+            <div id="error-message" style="color: red; display: none; margin-top: 10px;"></div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <h2 style="background-color: #edb123; font-color: #34315c;">Emergency Contact</h2>
+            <div class="item1">
+                <label for="full-name">Full Name:</label>
+            </div>
+            <div class="item2">
+                <input type="text" id="full-nameE" name="full-nameE" oninput="ChecknameE()">
+                <div id="name-error" style="color: red; display: none; margin-top: 5px;"></div>
+
+            </div>
+            <div class="item1">
+                <label for="phone-number">Phone Number:</label>
+
+            </div>
+            <div class="item3">
+                <input type="text" id="phone-numberE" name="phone-numberE" oninput="CheckPhoneNumberE()">
+                <div id="phone-error" style="color: red; display: none; margin-top: 5px;"></div>
+
+            </div>
+            <div class="item11">
+                <label for="email">E-mail:</label>
+            </div>
+            <div class="item32">
+                <input type="email" id="emailE" name="emailE" oninput="CheckEmailE()">
+                <div id="email-error" style="color: red; display: none; margin-top: 5px;"></div>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="item1">
+                <h2 style="background-color: #edb123; font-color: #34315c;">Additional Information</h2>
+            </div>
+
+            <div class="itemfull">
+                <label for="additional-info">Please indicate any specific interests, skills, or areas of expertise you would like to contribute to the organization:</label>
+                <textarea id="additional-info" name="additional-info" rows="8"></textarea>
+            </div>
+            <div class="item1">
+                <button type="button" id="submit" onclick="Checkvalidation()" style="background-color: #edb123; color:white; padding:10px;width:90%">Submit</button>
+            </div>
+            <div id="message" class="error-message"></div>
+        </div>
+    </form>
+    <footer class="footer">
+    </footer>
+
+</body>
+</html>
